@@ -377,6 +377,9 @@ void parseline (char *line) {
 		LOG0("This is a comment line\n");
 	}
 }
+/*
+ * fill_label_values updates the missing label nume numbers in the instructions object
+ */
 
 void fill_label_values() {
 	operationLine *currOp = operations;
@@ -438,7 +441,9 @@ void fill_label_values() {
 	}
 }
 
-
+/*
+ * writeLabelsToFile creates file and writes labels and line numbers into it
+ */
 void writeLabelsToFile(char *filename, FILE *fptr, label *labels) {
 	label *curr;
 	if ((fptr = fopen(filename, "w")) == NULL) { /* Open file for writing */
